@@ -31,7 +31,7 @@ int main() {
     printf("%i\n", i_of); // int: wraps around to minimum/maximum value
     printf("%i\n", i_min-1);
 
-    // if explicitly incrementing _MAX/_MIN constants 
+    // if explicitly specifying a value past valid range
     // => compiler warning
     // same wraparound behavior for long and short
     printf("%li\n", LONG_MAX+1); 
@@ -39,10 +39,12 @@ int main() {
     short s_of = s_max + 1;
     printf("%d\n", s_of+1); 
 
-    // Format specifier dictates how signed integers are shown
+    // Overflow case: Incrementing the value of c_of past char range
+    // Incrementing a variable within range does not raise compiler warning.
     char c_of = 127;
     c_of += 10;
 
+    // Format specifier dictates how signed integers are shown
     // %i - shows "-119", which is the value of c_of
     printf("%i\n", c_of); 
     
