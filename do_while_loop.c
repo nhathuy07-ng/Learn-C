@@ -3,7 +3,7 @@
 int main() {
     // Calculate factorial using for loop
 
-    int n = 5;
+    int n = 100;
     long long result = 1;
 
     if (n < 0) {
