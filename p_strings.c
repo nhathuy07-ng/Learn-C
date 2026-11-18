@@ -27,4 +27,14 @@ int main() {
     strcat(name_adj, name);
     printf("%s\n", name_adj);
 
+    // string comparison
+    // for first i such that ord(A[i]) < ord(B[i]) --> A < B
+    // if for i: A[i] terminates & B[i] non-terminating string --> A < B. 
+
+    // in ASCII: A-Z has smaller index than that of a-z
+    printf("%d\n", strcmp("abc", "abg")); // -1: string "abc" < string "abg"
+    printf("%d\n", strcmp("abce", "abc")); // +1: string "abce" > string "abc"
+    printf("%d\n", strcmp("stew", "stew")); // -1: string "stew" == string "stew"
+    printf("%d\n", strcmp("Abc", "ab")); // -1: string "Abc" < string "ab"
+
 }
